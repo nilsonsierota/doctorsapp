@@ -1,7 +1,14 @@
-import styled from "styled-components/native";
+import styled, { css } from "styled-components/native";
 
-export const Container = styled.TouchableOpacity`
-  width: 200px;
+export type DoctorProps = {
+  type: "primary" | "secondary";
+};
+
+export const Container = styled.TouchableOpacity.attrs({
+  activeOpacity: 0.5,
+})<DoctorProps>`
+  width: 45%;
+  margin: 7px;
 
   padding: 22px;
   border-radius: 7px;
@@ -9,6 +16,14 @@ export const Container = styled.TouchableOpacity`
 
   align-items: center;
   justify-content: center;
+
+  /* background-color: ${({ theme, type }) =>
+    type === "primary" ? "red" : "green"}; */
+  /* ${({ type }) =>
+    type === "primary" &&
+    css`
+      border: 5px solid ${({ theme }) => theme.COLORS.INFO};
+    `} */
 `;
 
 export const Avatar = styled.Image`
@@ -18,7 +33,9 @@ export const Avatar = styled.Image`
 `;
 export const Name = styled.Text`
   margin-top: 7px;
-  font-size: 16px;
+  font-size: 14px;
+  text-align: center;
+  font-weight: 700;
   color: ${({ theme }) => theme.COLORS.TEXT_PRIMARY};
 `;
 export const Specialist = styled.Text`
