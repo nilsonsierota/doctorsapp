@@ -10,4 +10,5 @@ export const Container = styled.View`
 
 export const Text = styled.Text`
   font-size: 48px;
+  color: ${({ theme }) => theme.COLORS.TEXT_SECONDARY};
 `;
