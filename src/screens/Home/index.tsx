@@ -47,7 +47,7 @@ const DATA = [
     specialist: "Developer",
   },
   {
-    id: "81",
+    id: "8",
     avatar: "https://github.com/nilsonsierota.png",
     name: "Nilson Sierota",
     specialist: "Developer",
@@ -71,7 +71,7 @@ export function Home() {
     <Container>
       <List
         data={DATA}
-        keyExtractor={(item) => item.specialist}
+        keyExtractor={(item) => item.id}
         renderItem={({ item }) => <Doctor type="primary" data={item} />}
         numColumns={2}
       />
